@@ -1,1 +1,3 @@
-# react
+# News App
+
+Project with React. 
