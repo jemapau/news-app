@@ -1,6 +1,8 @@
 
 import 'isomorphic-fetch' /* So fetch works in the server and the browser */
 
+import Layout from '../components/layout'
+
 export default class extends React.Component {
   static async getInitialProps() {
    const req = await fetch(`https://api.hackerwebapp.com/news`)
@@ -8,7 +10,7 @@ export default class extends React.Component {
    return { stories }
   }
   render() {
-    return <div>
+    return <Layout title="Latest News">
     <h1>Latest News</h1>
 
       { this.props.stories.map((story) => (
@@ -16,7 +18,7 @@ export default class extends React.Component {
       )) }
 
       <style jsx>{` /* Your Page’s CSS */ `}</style>
-      <style global jsx>{` /* Your Global CSS */ `}</style>
-    </div>
+
+    </Layout>
   }
 }
