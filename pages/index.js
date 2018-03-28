@@ -1,22 +1,25 @@
 
-export default class extends React.Component {
- render() {
-   return <div>
-     <h1>Hello 🌎!</h1>
-     <p>This is some text</p>
-      <style jsx>{`
-      h1 {
-      font-family: system-ui;
-      font-weight: 300;
-      color: #333;
-      }
+import 'isomorphic-fetch' /* So fetch works in the server and the browser */
 
-      p {
-      font-family: system-ui;
-      font-weight: 300;
-      color: #333;
-      }
-      `}</style>
-   </div>
+import Layout from '../components/Layout'
+
+export default class extends React.Component {
+  static async getInitialProps() {
+   const req = await fetch(`https://api.hackerwebapp.com/news`)
+   const stories = await req.json()
+   return { stories }
+ }
+
+ render() {
+   return <Layout title="Latest News">
+     <h1>Latest News</h1>
+
+     { this.props.stories.map((story) => (
+       <h2><a href={ story.url }>{ story.title }</a></h2>
+     )) }
+
+     <style jsx>{` /* Your Page’s CSS */ `}</style>
+     <style global jsx>{` /* Your Global CSS */ `}</style>
+   </Layout>
  }
 }
