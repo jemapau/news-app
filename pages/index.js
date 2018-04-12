@@ -22,7 +22,12 @@ export default class extends React.Component {
        nav {
          font-family: system-ui;
          font-weight: 300;
-         color: #333;
+         color: white;
+         background: #ff6600;
+          color: #fff;
+          font-weight: bold;
+          padding: 20px;
+          margin-bottom: 20px;
        }
      `}</style>
      <style global jsx>{`
@@ -30,21 +35,22 @@ export default class extends React.Component {
          background: #eee;
          font-family: system-ui;
          margin: 0;
-         padding: 10px;
        }
 
        .new-link {
          font-size: 14px;
+         margin-left: 10px;
+         margin-right: 10px;
         }
 
         .new-link a {
           display: block;
-          padding-top: 5px;
-          padding-bottom: 5px;
+          padding-top: 10px;
+          padding-bottom: 10px;
           text-decoration: none;
           font-weight: bold;
           color: black;
-
+          border-bottom: 1px solid #e3e3e3;
         }
         `}</style>
    </Layout>

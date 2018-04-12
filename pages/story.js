@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 
 export default class extends React.Component {
  static async getInitialProps({ query }) {
-   const req = await fetch(`https://node-hnapi.herokuapp.com/item/${storyId}`)
+   const req = await fetch(`https://api.hackerwebapp.com/item/${query.id}`)
    const story = await req.json()
    return { story }
  }
