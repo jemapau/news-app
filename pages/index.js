@@ -12,14 +12,41 @@ export default class extends React.Component {
 
  render() {
    return <Layout title="Latest News">
-     <h1>Latest News</h1>
+     <nav className="nav">Latest News</nav>
 
      { this.props.stories.map((story) => (
-       <h2><a href={ story.url }>{ story.title }</a></h2>
+       <div class="new-link"><a href={ story.url }>{ story.title }</a></div>
      )) }
 
-     <style jsx>{` /* Your Page’s CSS */ `}</style>
-     <style global jsx>{` /* Your Global CSS */ `}</style>
+     <style jsx>{`
+       nav {
+         font-family: system-ui;
+         font-weight: 300;
+         color: #333;
+       }
+     `}</style>
+     <style global jsx>{`
+       body {
+         background: #eee;
+         font-family: system-ui;
+         margin: 0;
+         padding: 10px;
+       }
+
+       .new-link {
+         font-size: 14px;
+        }
+
+        .new-link a {
+          display: block;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          color: black;
+
+        }
+        `}</style>
    </Layout>
  }
 }
