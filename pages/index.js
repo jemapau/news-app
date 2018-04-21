@@ -61,7 +61,6 @@ export default class extends React.Component {
           text-decoration: none;
           font-weight: bold;
           color: black;
-
         }
 
         .comment {
